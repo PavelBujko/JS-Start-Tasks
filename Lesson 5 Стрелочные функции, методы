@@ -151,4 +151,4 @@ let timerId = setInterval(() => {
     ul.appendChild(li);
     li.innerText = 'seme text';
     document.body.appendChild(ul);
-    }, 10000);
+    }, 1000);
