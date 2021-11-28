@@ -7,19 +7,27 @@ console.log(usefulUser)
 
 //------------------------------------------//
 
-console.log('Задание 2.1');
+// Задание 2.1
 // Написать функцию, которая принимает два параметра и складывает их.
 // Предусмотреть проверку на тип данных. Если хоть один из параметров не является числом, должно выводиться ообщение об ошибке.
 
-function getSum(a, b){
+function Sum(a, b){
     let typeA = typeof a;
     let typeB = typeof b;
 
-    if ((typeA === 'number') && (typeB == 'number')){
-        console.log('Проверка успешно пройдена!');
-        console.log(a + b);
-    } else{
-        console.log('Неправильный тип данных!');
+    if(arguments.length < 2){
+        console.log('введите два параметра');
+
+    } else if(arguments.length == 2){
+        if ((typeA === 'number') && (typeB == 'number')){
+            console.log('Проверка успешно пройдена!');
+            console.log(a + b);
+        } else{
+            console.log('Неправильный тип данных!');
+        }
+
+    } else if(arguments.length > 2){
+        console.log('введите два параметра');
     }
 }
 
@@ -35,66 +43,66 @@ foo( {car: 'Lexus', price: 64000} ); // [ {car: ‘Lexus’, price: 64000} ]
 //------------------------------------------//
 
 
-console.log('Задание 2.2');
+// Задание 2.2
 //Доработать задание 2.1 с проверкой на вызов функции без аргументов или с одним аргументом.
-// function Sum(a, b){
-//     let typeA = typeof a;
-//     let typeB = typeof b;
+function Sum(a, b){
+    let typeA = typeof a;
+    let typeB = typeof b;
 
-//     if ((typeA === 'number') && (typeB == 'number') && (arguments.length == 2)){
-//         console.log('Проверка успешно пройдена!');
-//         console.log(a + b);
-//     } else{
-//         console.log('Неправильный тип данных!');
-//     }
-// }
+    if ((typeA === 'number') && (typeB == 'number') && (arguments.length == 2)){
+        console.log('Проверка успешно пройдена!');
+        console.log(a + b);
+    } else{
+        console.log('Неправильный тип данных!');
+    }
+}
 
-// Sum(5, 6);
+Sum(5, 6);
 
 //------------------------------------------//
 
-console.log('Задание 3');
+// Задание 3
 //Создать функцию "угадай число". Она принимает число от 1 до 10 (обязательно проверить, что число не больше 10 и не меньше 0). Генерирует рандомное число от 1 до 10 и сравнивает с заданным числом.
 //Если они совпали, то возвращает “Вы выиграли”, если нет - то “Вы не угадали, ваше число -  ...,  а выпало число ...”
 
 
-// function getRandomInteger(min, max) {
-//     return Math.floor(Math.random() * (max - min)) + min;
-// }
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
-// let randomNum = () => {
-//     let number = prompt('Введите число от 1 до 10')
-//     let random = getRandomInteger(0, 11);
-//     if((number > 0) && (number < 11)){
-//         if (number == random) {
-//             console.log('Вы выиграли, ваше число ' + number +  ' и выпало число ' + random)
-//         } else {
-//             console.log('Вы не угадали, ваше число ' + number +  ', а выпало число ' + random)
-//         }
-//     } else {
-//         console.log('Число не соответствует заданому периоду')
-//     }
+let randomNum = () => {
+    let number = prompt('Введите число от 1 до 10')
+    let random = getRandomInteger(0, 11);
+    if((number > 0) && (number < 11)){
+        if (number == random) {
+            console.log('Вы выиграли, ваше число ' + number +  ' и выпало число ' + random)
+        } else {
+            console.log('Вы не угадали, ваше число ' + number +  ', а выпало число ' + random)
+        }
+    } else {
+        console.log('Число не соответствует заданому периоду')
+    }
     
-// };
+};
 
-// randomNum()
+randomNum()
 
 //------------------------------------------//
-console.log('Задание 4');
+// Задание 4
 // Напишите функцию copyArr(arr), которая копирует массив, не изменяя оригинал. Используйте подходящий метод массива.
 
-// function copyArr(names){
-//     nameSec = []
-//     names.forEach(name => nameSec.push(name)); 
-//     console.log(nameSec)
-// };
+function copyArr(names){
+    nameSec = []
+    names.map(name => nameSec.push(name));
+    console.log(nameSec)
+};
 
-// copyArr(['olya', 'ilya', 'tom'])
+copyArr(['olya', 'ilya', 'tom'])
 
 
 //------------------------------------------//
 
-console.log('Задание 5');
+// Задание 5
 //На странице в html задать список элементов li с числами. Джававскриптом нужно выбрать из этого списка четные числа и создать из них массив. Затем, используя метод forEach, создать из массива новый спсок элементов li и поместить эти элементы в исходный тег ul. Для обхода через querySelectorAll использовать цикл for-of (forEach работать не будет).
 
 console.log(document.getElementById('list'));
@@ -125,7 +133,7 @@ for( i = 0; i < arrNum.length; i++){
 }
 
 
-console.log('Задание 6');
+// Задание 6
 //Создать разметку формы с инпутом для текста и селектом для категории (добавить несколько option). Под формой должны должен быть список ul. В этот список каждую секунду добавляется новый элемент li. Для добавления можно использовать функцию setInterval https://learn.javascript.ru/se...
 //Вся разметка должна быть создана джаваскриптом. В HTML в начале body должен быть пустой.
 
