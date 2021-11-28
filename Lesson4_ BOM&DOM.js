@@ -58,15 +58,13 @@ let arr = [
     {name: "Костя", order: true}
 ];
 
-console.log(document.body);
+let ul = document.getElementsByClassName('list');
 for(let i = 0; i < arr.length; i++){
-    let purchse = (arr[i].order == true) ? 'оплатил заказ' : 'отменил заказ';
-    let ul = document.createElement('ul');
+    let purchse = (arr[i].order) ? 'оплатил заказ' : 'отменил заказ';
     let li = document.createElement('li');
-    ul.appendChild(li);
     li.innerText = 'Клиент ' + arr[i].name + ' ' +  purchse;
-    document.body.appendChild(ul);
-}
+    document.body.appendChild(li);
+};
 
 // #Задание 8
 let linksArr = ['https://www.onliner.by/', 'https://www.youtube.com/', 'https://vk.com/', 'https://www.google.com/', 'https://yandex.ru/'];
@@ -96,7 +94,11 @@ for(let i = 0; i < linksArr.length; i++){
 // Добавить к нескольким тегам на странице класс "forRemove". Далее написать JS код, который найдет в HTML все элементы с классом "forRemove" и удалит их.
 // ПОДСКАЗКА Для удаления DOM-элементов можно использовать метод element.remove()
 
-!!!!!!!!!!!!!
+let classes = document.querySelectorAll(".forRemove")
+
+for(let i = 0; i < classes.length; i++){
+    classes[i].remove()
+}
 
 // Задание 10*
 //Создать массив объектов с полями name, age. Создать html таблицу с двумя колонками, заполненную этими объектами. Name должно быть красного цвета, age - зеленого.
