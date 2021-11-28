@@ -1,21 +1,14 @@
 // Задание 1
 // Описать в html тег input и тег ul. По нажатию на клавишу в инпуте в список ul должен добавляться элемент li. Содержимое li - нажатая клавиша.
 
-const form =  document.querySelector('form')
-form.addEventListener('submit', (event) => {
-    event.preventDefault(); 
-
-    const input = form.querySelector('.string')
-
-    message = input.value;
-
-    const ul = document.querySelector('ul')
+let ul = document.querySelectorAll(".ul")
+const input =  document.querySelector('input')
+input.onkeydown = function(event){
+    let ketEvent = event.key;
     let li = document.createElement('li');
-    ul.appendChild(li);
-    li.innerText = message;
-    document.body.appendChild(ul);
-    input.value = ''
-})
+    li.innerText = ketEvent;
+    document.body.appendChild(li);
+}
 
 // Задание 2
 // Вставить в html теги input и div (просто предусмотреть в разметке).
@@ -30,7 +23,19 @@ input.onkeyup = function(event){
 // Задание 3
 // Создать в html форму с инпутом и кнопкой. Также добавить в html тег ul. Когда форма отправляется, добавлять в список тег li. Его содержимое - введенный текст. После отправки формы инпут должен быть очищен (проставить пустую строку в value).
 
-//Это Задание 1
+const form =  document.querySelector('form')
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); 
+    const input = form.querySelector('.string')
+    message = input.value;
+    const ul = document.querySelector('ul')
+    let li = document.createElement('li');
+    ul.appendChild(li);
+    li.innerText = message;
+    document.body.appendChild(ul);
+    input.value = '';
+    
+})
 
 
 
@@ -43,6 +48,7 @@ input.onkeyup = function(event){
 // 2) решить с помощью evel (https://developer.mozilla.org/...)
 
 
+//1 Способ
 const form =  document.querySelector('form');
 form.addEventListener('submit', (event) => {
     event.preventDefault(); 
@@ -69,7 +75,7 @@ form.addEventListener('submit', (event) => {
     };
 });
 
-
+//2 Способ
 const form =  document.querySelector('form');
 form.addEventListener('submit', (event) => {
     event.preventDefault(); 
@@ -87,6 +93,26 @@ form.addEventListener('submit', (event) => {
 
     calc = eval(num1 + num3 + num2)
     console.log(calc)
+});
+
+//3 способ
+const form =  document.querySelector('form');
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); 
+
+    const inputNum1 = form.querySelector('.num1');
+    let num1 = Number(inputNum1.value);
+    inputNum1.value = '';
+
+    const inputNum2 = form.querySelector('.num2');
+    let num2 =  Number(inputNum2.value);
+    inputNum2.value = '';
+
+    const select = form.querySelector('select');
+    let num3 = select.value;
+
+    let result = eval(`${num1} ${num3} ${num2}`)
+    console.log(result)
 });
 
 
