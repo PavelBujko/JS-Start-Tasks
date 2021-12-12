@@ -1,0 +1,54 @@
+.hero{
+    text-align: center;
+    background: rgb(208, 89, 89);
+    padding: 50px 50px 50px 50px;
+}
+
+.container{
+    max-width: 900px;
+    margin: auto;
+}
+
+.popup-btn{
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+    background: rgb(199, 104, 31);
+    border: 1px solid rgb(140, 138, 138);
+}
+
+.popup_content{
+    max-width: 700px;
+    background: aliceblue;
+    padding: 30px;
+    position: relative;
+}
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.364);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+
+
+.popup.popup_visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup_close{
+    padding: 5px;
+    position: absolute;
+    right: 25px;
+    color: #000;
+}
