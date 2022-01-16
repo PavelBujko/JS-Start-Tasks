@@ -23,11 +23,13 @@ burger_open.addEventListener("click", () => {
 
 
 search.addEventListener("focusin", () => {
-    search.classList.add('blackbg');
+search.classList.add('blackbg');
+find.classList.add('blackbg');
 });
 
 search.addEventListener("focusout", () => {
-    search.classList.remove('blackbg');
+search.classList.remove('blackbg');
+find.classList.remove('blackbg');
 });
 
 find.addEventListener("focus", () => {
