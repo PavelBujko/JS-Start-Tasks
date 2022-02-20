@@ -1,0 +1,17 @@
+.people{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.food{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.travel{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Viewer</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            padding: 30px;
+            height: 50px;
+            background-color: rgb(62, 62, 62);
+        }
+
+        .container{
+            width: 80%;
+        }
+
+        .player{
+            height: 450px;
+            background-color: rgb(208, 188, 36);
+        }
+
+        .preview{
+            height: 100%;
+            background-color: rgb(62, 62, 62);
+        }
+
+        .preview iframe{
+            width: 280px;
+            height: 157px;
+        }
+
+        .preview img{
+            width: 220px;
+            height: 155px;
+        }
+
+        input{
+            width: 350px;
+            height: 23px;
+        }
+
+        button{
+            height: 27px;
+            width: 78px;
+        }
+
+        img{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <form action="">
+                <input type="text" class="search">
+                <button>Find video</button>
+            </form>
+        </div>
+    </header>
+    <div class="player">
+    </div>
+    <div class="preview">
+    </div>
+
+
+
+
+    <script src="js/youtubeviewer.js"></script>
+</body>
+
+</html>
