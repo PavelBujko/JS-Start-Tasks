@@ -4,9 +4,9 @@ const player = document.querySelector('.player');
 const preview = document.querySelector('.preview');
 
 
-function createLinkForCards(search, player) {
+function createLinkForCards(search, playerr) {
     let cars = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${search}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>`;
-    player.innerHTML = cars;
+    playerr.innerHTML = cars;
 }
 
 function appendToFeatch(data) {
@@ -24,11 +24,11 @@ function appendToFeatch(data) {
             for (let item of imgs) {
                 if (item != event.target) {
                     item.classList.remove('active');
-                    createLinkForCards(data.items[i + 1].id.videoId)
+                    createLinkForCards(data.items[i + 1].id.videoId, player)
                 }
             }
             imgs[i].classList.add('active')
-            createLinkForCards(data.items[i + 1].id.videoId)
+            createLinkForCards(data.items[i + 1].id.videoId, player)
         });
     }
 }
@@ -47,7 +47,3 @@ form.addEventListener('submit', (event) => {
             appendToFeatch(data, input)
         });
 });
-
-
-
-
