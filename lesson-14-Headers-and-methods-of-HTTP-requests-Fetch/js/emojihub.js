@@ -4,14 +4,21 @@ const people = document.querySelector('.people');
 const food = document.querySelector('.food')
 const travel = document.querySelector('.travel')
 
-fetch('https://emojihub.herokuapp.com/api/random')
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+  }
+
+fetch('https://emojihub.herokuapp.com/api/all')
     .then((response) => {
         return response.json();
     })
     .then((data) => {
         button.addEventListener("click", () => {
+            dayEmoji.innerHTML = ''
             let emoji = document.createElement('p');
-            emoji.innerHTML = data.htmlCode[0];
+            emoji.innerHTML = data[getRandomIntInclusive(0, 1791)].htmlCode[0];
             emoji.style.fontSize = '70px'
             dayEmoji.appendChild(emoji);
         });
@@ -29,8 +36,6 @@ fetch('https://emojihub.herokuapp.com/api/all')
     })
     .then((data) => {
         for (let i = 0; i < data.length; i++) {
-            console.log(data[i].htmlCode[0]);
-            console.log(data[i].category)
 
             switch (data[i].category) {
                 case 'smileys and people':
